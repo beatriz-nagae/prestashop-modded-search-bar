@@ -1,44 +1,82 @@
-#header, #header .header-top {
-  background-color: white;
-}
-
 #search_widget {
+width: 100%;
+  max-width: none;
   margin-bottom: .625rem;
   overflow: auto;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  border: none !important;         /* remove qualquer borda */
+  outline: none !important;        /* remove qualquer contorno */
+  background: transparent;         /* garante fundo limpo */
+  box-shadow: none !important;     /* remove possíveis sombras */
 }
+
+
 #search_widget form {
   position: relative;
+  width: 100%;
+  max-width: none;
+  border: none;
+    outline: none;
 }
 #search_widget form i {
   position: absolute;
-  padding: .5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 1rem;
+  transition: color 0.3s ease;
 }
+
 #search_widget form i.clear {
-  right: 15px;
-  display: none;
+  display: none !important; /* remove o ícone "X" */
 }
+
+#search_widget form i.search {
+  left: 15px;
+}
+
 #search_widget form input {
   width: 100%;
-  padding: 10px 20px 10px 40px;
-  outline: none;
-  background-color: #f1f1f1;
+  max-width: 100%;
+  padding: 12px 40px 12px 40px;
+  font-size: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+  background-color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
 
+#search_widget form input::placeholder {
+  color: #aaa;
+  font-weight: 300;
+  content: "Só produto irado! Busque o que procura";
+}
+
+#search_widget form input:focus {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Autocomplete */
 .ui-autocomplete.searchbar-autocomplete {
   width: 100%;
-  min-height: 100%;
   border: none;
+  border-radius: 0 0 10px 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.ui-autocomplete.searchbar-autocomplete li a, .ui-autocomplete.searchbar-autocomplete li a.ui-state-focus {
-  padding: 8px 15px;
-  overflow: auto;
-  border: none;
-  background: none;
-  margin: auto;
-  border-radius: 0;
+.ui-autocomplete.searchbar-autocomplete li a {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
 }
 
 .ui-autocomplete.searchbar-autocomplete li a:hover {
@@ -47,22 +85,20 @@
 }
 
 .ui-autocomplete.searchbar-autocomplete li a .autocomplete-thumbnail {
-  float: left;
-  width: 50px;
-  height: auto;
-  margin-right: 8px;
+  width: 40px;
+  margin-right: 10px;
+  border-radius: 4px;
 }
 
+/* Responsivo */
 @media only screen and (min-width: 768px) {
   #search_widget {
-    float: right;
     margin-bottom: 0;
+    justify-content: flex-end;
   }
 
   .ui-autocomplete.searchbar-autocomplete {
     width: 400px;
-    min-height: auto;
-    left: auto;
   }
 }
 
