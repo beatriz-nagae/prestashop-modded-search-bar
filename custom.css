@@ -1,0 +1,22 @@
+.wpce_content a {
+  display: block; /* bloco simples, sem layout forçado */
+  width: 100%; /* adapta à largura do card */
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center; /* centraliza o texto no card */
+  text-decoration: none; /* remove o sublinhado */
+  word-break: break-word; /* evita overflow em nomes longos */
+  transition: color 0.3s ease;
+}
+
+.wpce_content a:hover {
+  color: #0078FF; /* ou a cor do hover do seu tema */
+}
+.wpce_content,
+.wpce_content .product,
+.wpce_content .elementor-widget-container {
+  box-shadow: none !important;
+}
